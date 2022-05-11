@@ -42,7 +42,7 @@ p{
 }
 .texts{
     display:inline-block;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 .text{
     width: 0;
@@ -62,7 +62,7 @@ p{
     gap: 5px;
     align-items: center;
     float: right;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 label{
     border: 0.1rem solid #72adff;
@@ -71,6 +71,23 @@ label{
     height: 15px;
     background: transparent;
 }
-#slide1:checked + label{
-    background-color: blanchedalmond;
+@media (max-width: 769px) {
+    .slider{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .controls{
+        margin: 0;
+        display: flex;
+        float: none;
+        order: 2;
+        align-self: center;
+    }
+    .texts{
+        display: block;
+        margin: 0;
+        order: 3;
+    }
+
 }
