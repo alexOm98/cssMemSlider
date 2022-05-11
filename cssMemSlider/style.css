@@ -1,16 +1,12 @@
-.container{
+body{
     background: gainsboro;
-    height: 100vh;
-    width: 100vw;
 }
 .slider-wrapper{
     margin: 0 auto;
     background-color: #202325;
-    height: 70%;
     width: fit-content;
     padding: 2rem;
     display: flex;
-
 }
 .slides{
     display: flex;
@@ -25,7 +21,7 @@
 #slide2:checked ~ .slides > .slide2,
 #slide3:checked ~ .slides > .slide3,
 #slide4:checked ~ .slides > .slide4{
-    width: 50vw;
+    width: 65vw;
     height: 30rem;
     opacity: 1;
 }
@@ -39,19 +35,42 @@ p{
     font-size: 1.2rem;
 }
 .wrappper-controls-text{
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.texts{
+    display:inline-block;
+    margin-top: 2rem;
+}
+.text{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+#slide1:checked ~ .texts p:nth-of-type(1),
+#slide2:checked ~ .texts p:nth-of-type(2),
+#slide3:checked ~ .texts p:nth-of-type(3),
+#slide4:checked ~ .texts p:nth-of-type(4){
+    width: fit-content;
+    height: fit-content;
+    opacity: 1;
+}
 .controls{
-    display: flex;
+    display: inline-flex;
     gap: 5px;
+    align-items: center;
+    float: right;
+    margin-top: 2rem;
 }
 label{
     border: 0.1rem solid #72adff;
     border-radius: 0.6rem;
-    width: 10px;
-    height: 10px;
-    background: #72adff;
+    width: 15px;
+    height: 15px;
     background: transparent;
+}
+#slide1:checked + label{
+    background-color: blanchedalmond;
 }
