@@ -1,0 +1,44 @@
+.container{
+    background: gainsboro;
+    height: 100vh;
+    width: 100vw;
+}
+.slider-wrapper{
+    margin: 0 auto;
+    background-color: #202325;
+    height: 70%;
+    width: fit-content;
+    padding: 2rem;
+    display: flex;
+
+}
+.slider-image{
+    border-radius: 1rem;
+    width: 50vw;
+    height: 30rem;
+}
+input{
+    display: none;
+}
+p{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+}
+.wrappper-controls-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.controls{
+    display: flex;
+    gap: 5px;
+}
+label{
+    border: 0.1rem solid #72adff;
+    border-radius: 0.6rem;
+    width: 10px;
+    height: 10px;
+    background: #72adff;
+}
