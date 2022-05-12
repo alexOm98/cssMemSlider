@@ -1,5 +1,6 @@
 body{
     background: gainsboro;
+    overflow: hidden;
 }
 .slider-wrapper{
     margin: 0 auto;
@@ -8,25 +9,30 @@ body{
     padding: 2rem;
     display: flex;
 }
+.slider{
+    width: 65vw;
+}
 .slides{
     display: flex;
+    height: 30rem;
 }
 .slide{
     border-radius: 1rem;
-    height: 0;
     width: 0;
     opacity: 0;
+    transition: 0.5s
 }
 #slide1:checked ~ .slides > .slide1,
 #slide2:checked ~ .slides > .slide2,
 #slide3:checked ~ .slides > .slide3,
 #slide4:checked ~ .slides > .slide4{
-    width: 65vw;
-    height: 30rem;
+    width: 100%;
     opacity: 1;
 }
 input{
-    display: none;
+    height: 0;
+    width: 0;
+    opacity: 0;
 }
 p{
     margin: 0;
@@ -41,7 +47,7 @@ p{
     justify-content: space-between;
 }
 .texts{
-    display:inline-block;
+    display:inline-flex;
     margin-top: 1.5rem;
 }
 .text{
@@ -49,45 +55,78 @@ p{
     height: 0;
     opacity: 0;
 }
-#slide1:checked ~ .texts p:nth-of-type(1),
-#slide2:checked ~ .texts p:nth-of-type(2),
-#slide3:checked ~ .texts p:nth-of-type(3),
-#slide4:checked ~ .texts p:nth-of-type(4){
+#slide1:checked ~ .wrappper-controls-text .texts p:nth-of-type(1),
+#slide2:checked ~ .wrappper-controls-text .texts p:nth-of-type(2),
+#slide3:checked ~ .wrappper-controls-text .texts p:nth-of-type(3),
+#slide4:checked ~ .wrappper-controls-text .texts p:nth-of-type(4){
     width: fit-content;
-    height: fit-content;
     opacity: 1;
+    transition: opacity 1.5s ease-in-out;
 }
 .controls{
     display: inline-flex;
-    gap: 5px;
     align-items: center;
-    float: right;
-    margin-top: 1.5rem;
+    margin-top: .5rem;
 }
-label{
+.wrapper-control-dot{
+    width: 2rem;
+    height: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper-control-dot:hover .control-dot{
+    background-color: white;
+    border-color: white;
+}
+.wrapper-control-dot:active .control-dot{
+    background-color: rgb(193, 193, 193);
+    border-color: rgb(193, 193, 193);
+}
+.control-dot{
+    display: block;
     border: 0.1rem solid #72adff;
     border-radius: 0.6rem;
-    width: 15px;
-    height: 15px;
-    background: transparent;
+    width: 1rem;
+    height: 1rem;
+    background: #72adff;
+    cursor: pointer;
+    transition: 0.3s
+}
+#slide1:checked ~ .wrappper-controls-text .controls label:nth-of-type(1) label,
+#slide2:checked ~ .wrappper-controls-text .controls label:nth-of-type(2) label,
+#slide3:checked ~ .wrappper-controls-text .controls label:nth-of-type(3) label,
+#slide4:checked ~ .wrappper-controls-text .controls label:nth-of-type(4) label {
+	background: transparent;
 }
 @media (max-width: 769px) {
+    p{
+        font-size: 0.8rem;
+    }
     .slider{
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+    }
+    .slides{
+        height: 20rem;
+    }
+    .slider{
+        height: 70vh;
+    }
+    .wrappper-controls-text{
+        display: flex;
+        gap: 0;
+        flex-direction: column;
     }
     .controls{
         margin: 0;
         display: flex;
-        float: none;
         order: 2;
         align-self: center;
     }
     .texts{
         display: block;
-        margin: 0;
         order: 3;
     }
-
 }
