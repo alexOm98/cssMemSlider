@@ -80,10 +80,6 @@ p{
     background-color: white;
     border-color: white;
 }
-.wrapper-control-dot:active .control-dot{
-    background-color: rgb(193, 193, 193);
-    border-color: rgb(193, 193, 193);
-}
 .control-dot{
     display: block;
     border: 0.1rem solid #72adff;
@@ -93,6 +89,10 @@ p{
     background: #72adff;
     cursor: pointer;
     transition: 0.3s
+}
+.wrapper-control-dot .control-dot:active{
+    background-color: rgb(193, 193, 193);
+    border-color: rgb(193, 193, 193);
 }
 #slide1:checked ~ .wrappper-controls-text .controls label:nth-of-type(1) label,
 #slide2:checked ~ .wrappper-controls-text .controls label:nth-of-type(2) label,
